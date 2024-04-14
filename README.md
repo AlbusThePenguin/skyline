@@ -1,36 +1,43 @@
 
 ![Skyline](https://i.imgur.com/Px6V6pJ.jpg)
 
-Did a full rewrite of this plugin. It is way more lightweight. Removed some features cause they were irrelevant. I hope you enjoy the new grapplinghook!
+Welcome to the revamped version of the GrapplingHook plugin! We've streamlined and optimized the plugin to make it more lightweight while retaining its core functionality. Say goodbye to unnecessary features and hello to a smoother, more efficient experience with grappling hooks in your Minecraft server.
 
-Simply plug and play, edit configurations in config.yml and messsages.yml, and simply reload in-game. There is no need to restart to update the config or messages.
+## Installation
 
-Now you can use "any" item as a grappling hook in theory, and the default item is LEAD.
+Simply plug and play! Edit configurations in `config.yml` and `messages.yml`, then reload in-game. No need to restart your server to update configurations or messages.
 
-*requires Java 17
+## New Features
 
-Features
-- Power levels: Is used to increase speed of the arrow & increased velocity.
+- **Power Levels**: Increase arrow speed and velocity with customizable power levels.
+- **Cooldown**: Set a cooldown period between uses for balanced gameplay.
+- **Fall Damage Negation**: Safely traverse heights without fear of fall damage.
+- **Custom Sounds**: Choose from a variety of sounds for grappling hook use.
+- **Particle Effects**: Enjoy adorable particles that accompany your grappling hook usage.
+- **Customizable Messages**: Edit all visible in-game messages to suit your server's style.
 
-- Cooldown: Set a cooldown between uses.
+## Usage
 
-- Fall damage: Negate fall damage, and don't kill players when landing after use of the grappling hook.
+- `/skyline give`: Give players access to the skyline hook.
+- `/skyline reload`: Reload plugin configurations.
 
-- Sound: on use you can decide what sound to use.
+## Permissions
 
-- Particles: Cute particles fired the same way as the arrow.
+- `skyline.use`: Allows users to utilize the skyline hook.
+- `skyline.admin`: Grants access to plugin commands.
 
-- Edit: all visible to player messages.
+## Requirements
 
-Commands
-/skyline give <power level> <player>
-/skyline reload
-Permissions:
-skyline.use - to allow users to use the skyline hook.
-skyline.admin - for access to commands.
+- **Java 17**: Ensure you have Java 17 installed for optimal performance.
 
-If you enjoy this plugin, feel free to consider a donation or a star or two.
+## Support
 
-Please use discussion or pm me for bugs / issues.  (y)
+If you find this plugin useful, consider supporting its development through a donation or starring the repository on GitHub.
 
-Feel free to support me @ https://www.paypal.com/donate/?hosted_button_id=CZ8E9USK64P78
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=CZ8E9USK64P78)
+
+## Feedback
+
+Encountered a bug or have suggestions for improvement? Don't hesitate to reach out via discussion or private message. Your feedback helps us make the plugin even better!
+
+Happy grappling!
