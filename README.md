@@ -1,3 +1,5 @@
+https://i.imgur.com/Px6V6pJ.jpg  
+
 Did a full rewrite of this plugin. It is way more lightweight. Removed some features cause they were irrelevant. I hope you enjoy the new grapplinghook!
 
 Simply plug and play, edit configurations in config.yml and messsages.yml, and simply reload in-game. There is no need to restart to update the config or messages.
