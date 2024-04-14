@@ -1,0 +1,4 @@
+name: Skyline
+version: '${version}'
+main: me.albusthepenguin.skyline.Skyline
+api-version: '1.20'
