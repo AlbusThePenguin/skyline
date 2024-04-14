@@ -1,4 +1,5 @@
-https://i.imgur.com/Px6V6pJ.jpg  
+
+![Skyline](https://i.imgur.com/Px6V6pJ.jpg)
 
 Did a full rewrite of this plugin. It is way more lightweight. Removed some features cause they were irrelevant. I hope you enjoy the new grapplinghook!
 
