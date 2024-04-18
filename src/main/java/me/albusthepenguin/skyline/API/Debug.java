@@ -36,7 +36,7 @@ public class Debug {
 
     public void write(String text) {
         if(skyline.getConfiguration().getConfig(ConfigType.Config).getBoolean("Settings.debug")) {
-            skyline.getLogger().info(" [Debug] >> " + text);
+            skyline.getLogger().info(text);
         }
     }
 

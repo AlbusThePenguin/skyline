@@ -32,6 +32,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageEvent;
+import org.bukkit.event.entity.PlayerLeashEntityEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -72,6 +73,14 @@ public class HookListener implements Listener {
                 }
                 hookHandler.sendArrow(player, item);
             }
+        }
+    }
+
+    @EventHandler
+    public void onLeash(PlayerLeashEntityEvent event) {
+        ItemStack itemStack = event.getPlayer().getInventory().getItemInMainHand();
+        if(itemStack.hasItemMeta() && hookHandler.isHook(itemStack)) {
+            event.setCancelled(true);
         }
     }
 

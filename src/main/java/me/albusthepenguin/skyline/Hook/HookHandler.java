@@ -58,7 +58,9 @@ public class HookHandler {
     }
 
     public void setCooldown(Player player, long cd) {
-        cooldown.put(player, System.currentTimeMillis() + (cd * 1000));
+        cd *= 1000;
+        skyline.getDebug().write("Setting cooldown for " + cd);
+        cooldown.put(player, System.currentTimeMillis() + cd);
     }
 
     public long getCooldown(Player player) {
@@ -71,6 +73,7 @@ public class HookHandler {
     public boolean hasCooldown(Player player) {
         if (!cooldown.containsKey(player)) return false;
         long remainingCooldown = cooldown.get(player) - System.currentTimeMillis();
+        skyline.getDebug().write("The cooldown is " + remainingCooldown);
         return remainingCooldown > 0; // Check if remaining time is positive
     }
 
@@ -133,7 +136,8 @@ public class HookHandler {
             player.spawnParticle(Particle.REDSTONE, particleLocation, 1, dustOptions);
         }
         long defaultCooldown = section.getLong("cooldown");
-        int ticks = (int) (defaultCooldown / 50);
+        skyline.getDebug().write("default cd is " + defaultCooldown + " and result is ");
+        int ticks = (int) (defaultCooldown);
         setCooldown(player, ticks);
         player.setCooldown(hook(1).getType(), ticks);
 
