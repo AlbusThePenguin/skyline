@@ -78,9 +78,11 @@ public class HookListener implements Listener {
 
     @EventHandler
     public void onLeash(PlayerLeashEntityEvent event) {
-        ItemStack itemStack = event.getPlayer().getInventory().getItemInMainHand();
-        if(itemStack.hasItemMeta() && hookHandler.isHook(itemStack)) {
+        Player player = event.getPlayer();
+        ItemStack itemStack = player.getInventory().getItemInMainHand();
+        if(itemStack.hasItemMeta() && hookHandler.isHook(itemStack)) { //Todo: the item vanishes.
             event.setCancelled(true);
+            player.updateInventory();
         }
     }
 
