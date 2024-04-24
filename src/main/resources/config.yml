@@ -1,7 +1,9 @@
 Settings:
   #Default item for skyline is 'LEAD', can be changed, but not been tested intensively.
   #Add any valid material ID.
-  item: LEAD
+  material: LEAD
+
+  model: 0
   #The sound fired upon using the Skyline.
   use_sound: ENTITY_ARROW_SHOOT
   #The cooldown between each use. Set to 0, if you don't want to use it or a small number like 0.1.

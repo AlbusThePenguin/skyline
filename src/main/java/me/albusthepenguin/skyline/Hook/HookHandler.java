@@ -149,7 +149,7 @@ public class HookHandler {
     public ItemStack hook(int power) {
         ConfigurationSection section = skyline.getConfiguration().getConfig(ConfigType.Config).getConfigurationSection("Settings");
         if(section == null) return null;
-        String materialName = section.getString("item");
+        String materialName = section.getString("material");
         if(materialName == null) {
             skyline.getDebug().write("[NullPointer] Cannot find Settings.item material for grappling hook, please in Settings. in config.yml enter item: Material (Replace material with valid material ID).");
             return null;
@@ -163,6 +163,11 @@ public class HookHandler {
         ItemStack item = new ItemStack(material);
         ItemMeta meta = item.getItemMeta();
         if(meta == null) return null;
+
+        int model = section.getInt("model");
+        if(model > 0) {
+            meta.setCustomModelData(model);
+        }
 
         PersistentDataContainer container = meta.getPersistentDataContainer();
         container.set(powerKey(), PersistentDataType.INTEGER, power);
