@@ -125,13 +125,16 @@ public class HookHandler {
         if (world == null) return;
         Arrow arrow = world.spawnArrow(location, direction, finalSpeed, spread, Arrow.class);
 
-        Particle.DustOptions dustOptions = new Particle.DustOptions(Color.fromRGB(50, 155, 168), 2);
-        int startOffset = 5;
+        if(section.getBoolean("particles")) {
+            Particle.DustOptions dustOptions = new Particle.DustOptions(Color.fromRGB(50, 155, 168), 2);
+            int startOffset = 5;
 
-        for (int i = startOffset; i < 10 + startOffset; i++) {
-            Location particleLocation = location.clone().add(direction.clone().multiply(i));
-            player.spawnParticle(Particle.REDSTONE, particleLocation, 1, dustOptions);
+            for (int i = startOffset; i < 10 + startOffset; i++) {
+                Location particleLocation = location.clone().add(direction.clone().multiply(i));
+                player.spawnParticle(Particle.REDSTONE, particleLocation, 1, dustOptions);
+            }
         }
+
         long defaultCooldown = section.getLong("cooldown") * 1000;
         int ticks = (int) (defaultCooldown / 50);
         setCooldown(player, defaultCooldown);
@@ -140,8 +143,10 @@ public class HookHandler {
         HookData data = new HookData(player, power);
 
         String soundName = section.getString("use_sound");
-        Sound sound = Sound.valueOf(soundName);
-        player.playSound(location, sound, 1f, 1f);
+        if(soundName != null && !soundName.equalsIgnoreCase("NONE")) {
+            Sound sound = Sound.valueOf(soundName);
+            player.playSound(location, sound, 1f, 1f);
+        }
 
         arrows.put(arrow.getUniqueId(), data);
     }
